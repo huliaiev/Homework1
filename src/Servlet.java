@@ -1,8 +1,5 @@
-
-
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
-import java.applet.Applet;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,14 +36,10 @@ public class Servlet extends HttpServlet {
             counter.put(s, counter.get(s) + 1);
         }
 
-        StringBuilder result = new StringBuilder("<b>Statistics of answers </b><br>");
+        StringBuilder result = new StringBuilder("<b>Statistics of answers: </b><br>");
         for (String key : db.keySet()) {
             result.append(db.get(key) + " :" + counter.get(key) + "<br>");
         }
         resp.getWriter().print(String.format(pattern, result.toString()));
-
-
-      //  resp.sendRedirect("index.html");
-
     }
 }
